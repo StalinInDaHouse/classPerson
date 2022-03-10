@@ -1,4 +1,5 @@
 import java.io.PrintStream;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Person {
@@ -19,8 +20,12 @@ public class Person {
     public void printFirstName() {
         System.out.println("Имя: " + firstName);
     }
-    public void printAge() {
-        System.out.println("Возраст: " + age);
+
+    public void printBirthYear() {
+        LocalDate today = LocalDate.now();
+        int year = today.getYear();
+        int birthYear = Integer.parseInt(age.trim());
+        System.out.println(year - birthYear);
     }
 
     public String getSecondName() {
